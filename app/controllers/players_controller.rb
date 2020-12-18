@@ -1,25 +1,40 @@
 class PlayersController < ApplicationController
 
   def index
+    @players = Player.all
   end
 
   def new
+    @player = Player.new
   end
 
   def create
+    @player = Player.new(player_params)
+    @player.save
 
+    redirect_to @player
   end
 
   def show
-
+    @player = Player.find(params[:id])
   end
 
   def edit
-
+    @player = Player.find(params[:id])
   end
 
   def update
 
   end
-  
+
+  def destroy
+
+  end
+
+  private
+
+  def player_params
+    params.require(:player).permit(:name, :age, :motto, :favorite_game, :win_phrase, :lose_phrase)
+  end
+
 end

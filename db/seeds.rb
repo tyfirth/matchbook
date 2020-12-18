@@ -33,14 +33,15 @@ poker = Game.create({name: "Poker", description: "The best card game", category:
 
 
 
-match1 = Match.create({game_id: 1, match_datetime: DateTime.new(2017, 07, 12, 19, 00, 0), score: 17, notes: "a decicive victory"})
-
+match1 = Match.create({game_id: 1, match_datetime: DateTime.new(2017, 07, 12, 19, 00, 0), score: 17, notes: "a decicive victory", winner: "Fei"})
 match1.players = [tyler, fei, marla, piper]
-match1.winner = Player.find_by(name: "Fei")
+match1.save
 
-match2 = Match.create({game_id: 2, match_datetime: DateTime.new(2020, 04, 01, 15, 55, 0), score: 96, notes: "won by a nose"})
-
+match2 = Match.create({game_id: 2, match_datetime: DateTime.new(2020, 04, 01, 15, 55, 0), score: 96, notes: "won by a nose", winner: "Marla"})
 match2.players = [marla, piper]
-match2.winner = Player.find_by(name: "Marla")
+match2.save
 
-match3 = Match.create({game_id = Game.find_by(name: "Poker"), match_datetime: Time.now})
+#match3 = Match.create({game_id: 3, match_datetime: DateTime.new(1984, 08, 19, 10, 47, 05), winner: "Tyler"})
+#match3.players = [tyler, fei, piper]
+#match3.winner = tyler
+#match3.save

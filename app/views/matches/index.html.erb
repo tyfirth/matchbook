@@ -1,0 +1,7 @@
+<h1>All the Matches</h1>
+
+<% @matches.each do |match| %>
+
+  <%=link_to match.match_datetime, match_path(match) %><br>
+
+<% end %>

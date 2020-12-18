@@ -23,3 +23,14 @@ Things you may want to cover:
 
 * ...
 # matchbook
+
+Questions
+
+- Match show page objects of users being puts
+
+-Players array in match
+
+-How to handle the winner
+
+-What's best to use, datetime or strftime
+-can you format datetime?

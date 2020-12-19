@@ -4,13 +4,21 @@
 
   <%=f.label :title %>
   <%=f.text_field :title %>
+<br>
+  <%=f.label :match_datetime %>
+  <%=f.datetime_select :match_datetime %>
 <br><br>
   <%=f.label :game_id %>
   <%=f.collection_select :game_id, Game.all, :id, :name %>
 <br><br>
+
+
   <%=f.label :players %>
   <%=f.collection_check_boxes :players, Player.all, :id, :name %>
 <br><br>
+<!--is this where hidden forms come in?-->
+
+
   <%=f.label :score %>
   <%=f.text_field :score %>
 <br><br>

@@ -11,16 +11,24 @@ class MatchesController < ApplicationController
   end
 
   def create
+    #byebug
     @match = Match.new(match_params)
-    @match.save
-
-    redirect_to match_path(@match)
+    #byebug
+    #@match.players = params[:match][:players]
+    #@match.players.shift
+    if @match.save
+      redirect_to match_path(@match)
+    else
+      @errors = @match.errors.full_messages
+      render :new
+    end
   end
 
   def show
+    
     @match = Match.find(params[:id])
     @match_game = Game.find_by(id: @match.game_id)
-    #do I need players or match_players here?
+
   end
 
   def edit
@@ -45,7 +53,7 @@ class MatchesController < ApplicationController
   private
 
   def match_params
-    params.require(:match).permit(:players, :title, :match_datetime, :winner, :score, :notes, :game_id)
+    params.require(:match).permit({players: [:name]}, :title, :match_datetime, :winner, :score, :notes, :game_id, :players_ids, games_attributes: [])
   end
 
   #getting error unpermitted parameter "players" on new match form...

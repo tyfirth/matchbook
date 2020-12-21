@@ -7,21 +7,14 @@
 
 <h3>All the matches</h3>
 
-<%= @game.matches.each do |match| %>
+<% @game.matches.each do |match| %>
 
   <%= link_to match.match_datetime, match_path(match)%>
     <ul>
-      <%= match.players.name %>
+      <% match.players.each do |player| %>
+      <li><%= link_to player.name, player_path(player) %></li>
+      <% end %>
     </ul>
 
 <% end %>
 <br>
-
-<%= link_to "All the Games", games_path %>
-<br>
-<%= link_to "Create New Match", new_match_path(@game) %>
-
-#links to edit game details
-
-
-#links to home

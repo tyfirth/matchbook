@@ -29,7 +29,7 @@ azul = Game.create({name: "Azul", description: "a unique game of tiles", categor
 
 poker = Game.create({name: "Poker", description: "The best card game", category: "Gambling card game"})
 
-
+life = Game.create({name: "Life", description: "The game of Life", category: "Board"})
 
 
 
@@ -41,7 +41,6 @@ match2 = Match.create({game_id: 2, match_datetime: DateTime.new(2020, 04, 01, 15
 match2.players = [marla, piper]
 match2.save
 
-#match3 = Match.create({game_id: 3, match_datetime: DateTime.new(1984, 08, 19, 10, 47, 05), winner: "Tyler"})
-#match3.players = [tyler, fei, piper]
-#match3.winner = tyler
-#match3.save
+match3 = Match.create({game_id: 3, match_datetime: DateTime.new(1984, 8, 19, 10, 46, 55), score: 1000000, notes: "a royal win", winner: "Tyler"})
+match3.players = [tyler, fei, piper]
+match3.save

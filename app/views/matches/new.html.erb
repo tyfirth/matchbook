@@ -14,7 +14,7 @@
 
 
   <%=f.label :players %>
-  <%=f.collection_check_boxes :players, Player.all, :id, :name %>
+  <%=f.collection_check_boxes :players, Player.all, :name, :name %>
 <br><br>
 <!--is this where hidden forms come in?-->
 
@@ -31,3 +31,4 @@
 
   <%=f.submit %>
 <% end %>
+<br><br>

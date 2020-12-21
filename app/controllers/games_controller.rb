@@ -12,9 +12,10 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     if @game.save
-      redirect_to @game
+      redirect_to game_path(@game)
     else
-      render 'new'
+      @errors = @game.errors.full_messages
+      render :new
     end
   end
 
@@ -23,11 +24,14 @@ class GamesController < ApplicationController
   end
 
   def edit
-    @game = Game.find(params[:id])
+    @game = Game.find_by(id: params[:id])
   end
 
   def update
+    game = game.find_by(id: params[:id])
+    game.update(game_params)
 
+    redirect_to game_path(game)
   end
 
   def destroy

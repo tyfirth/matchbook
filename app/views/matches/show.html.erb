@@ -7,7 +7,7 @@
 
 <br>
 
-<h2>Winner: <%= @match.winner %> </h2>
+<h2>Winner: <%= link_to @match.winner, player_path(@match_winner) %> </h2>
 
 <h3>Score: <%= @match.score %> </h3>
 

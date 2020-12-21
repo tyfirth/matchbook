@@ -2,23 +2,12 @@
 
 <h1> <%= @match_game.name %> </h1>
 
-<h1> <%= @match.title %> </h1>
 <h3>Played On <%= @match.created_at %> </h3>
 
 <br>
 
+<h1>Players: <%  %> </h1>
+
 <h2>Winner: <%= @match.winner %> </h2>
 
 <h3>Score: <%= @match.score %> </h3>
-
-<h3>Players: <% @match.players.each do |player| %></h3>
-  <ul>
-    <li><%= link_to player.name, player_path(player) %></li>
-  </ul>
-<% end %>
-
-<br>
-
-<%= link_to "All the Matches", matches_path %>
-<br>
-<%= link_to "Edit Match Details", edit_match_path(@match) %>

@@ -2,9 +2,6 @@
 
 <%= form_for @match do |f| %>
 
-  <%=f.label :title %>
-  <%=f.text_field :title %>
-<br>
   <%=f.label :match_datetime %>
   <%=f.datetime_select :match_datetime %>
 <br><br>
@@ -12,18 +9,15 @@
   <%=f.collection_select :game_id, Game.all, :id, :name %>
 <br><br>
 
-
-  <%=f.label :players %>
-  <%=f.collection_check_boxes :players, Player.all, :id, :name %>
+  <%=f.label :player_names %>
+  <%=f.collection_check_boxes :player_names, Player.all, :name, :name %>
 <br><br>
-<!--is this where hidden forms come in?-->
-
 
   <%=f.label :score %>
   <%=f.text_field :score %>
 <br><br>
-  <%=f.label :winner %>
-  <%=f.collection_radio_buttons :winner, Player.all, :name, :name %>
+  <%=f.label "Winner" %>
+  <%=f.collection_radio_buttons :player_id, Player.all, :id, :name %>
 <br><br>
   <%= f.label :notes %>
   <%=f.text_area :notes %>

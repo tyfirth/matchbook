@@ -13,13 +13,13 @@ Game.reset_pk_sequence
 Match.destroy_all
 Match.reset_pk_sequence
 
-tyler = Player.create({name: "Tyler", age: 36, motto: "yolo", favorite_game: "Hold'em", win_phrase: "IYAMA GULDEN GAWD!", lose_phrase: "Shucks"})
+tyler = Player.create({name: "Tyler", username: "SirCrowboticus", age: 36, motto: "yolo"})
 
-fei = Player.create({name: "Fei", age: 29, motto: "brows on fleek", favorite_game: "Azul", win_phrase: "Of course", lose_phrase: "fake news"})
+fei = Player.create({name: "Fei", username: "TigerPrincess", age: 29, motto: "brows on fleek"})
 
-marla = Player.create({name: "Marla", age: 5, motto: "stop and smell the roses", favorite_game: "ball", win_phrase: "Woof", lose_phrase: "growl"})
+marla = Player.create({name: "Marla", username: "DaBomb", age: 5,  motto: "stop and smell the roses"})
 
-piper = Player.create({name: "Piper", age: 2, motto: "i demand cuddles", favorite_game: "tugz", win_phrase: "your soul is mine", lose_phrase: "no biggie"})
+piper = Player.create({name: "Piper", username: "Becky", age: 2, motto: "i demand cuddles"})
 
 
 
@@ -33,15 +33,15 @@ poker = Game.create({name: "Poker", description: "The best card game", category:
 
 
 
-match1 = Match.create({game_id: 1, match_datetime: DateTime.new(2017, 07, 12, 19, 00, 0), score: 17, notes: "a decicive victory", winner: "Fei"})
-match1.players = [tyler, fei, marla, piper]
+match1 = Match.create({game_id: 1, player_id: 1, match_datetime: DateTime.new(2017, 07, 12, 19, 00, 0), score: 17, notes: "a decicive victory", winner: "Fei"})
+match1.player_names = [tyler.name, fei.name, marla.name, piper.name]
 match1.save
 
-match2 = Match.create({game_id: 2, match_datetime: DateTime.new(2020, 04, 01, 15, 55, 0), score: 96, notes: "won by a nose", winner: "Marla"})
-match2.players = [marla, piper]
+match2 = Match.create({game_id: 2, player_id: 1, match_datetime: DateTime.new(2020, 04, 01, 15, 55, 0), score: 96, notes: "won by a nose", winner: "Marla"})
+match2.player_names = [tyler.name, fei.name]
 match2.save
 
-#match3 = Match.create({game_id: 3, match_datetime: DateTime.new(1984, 08, 19, 10, 47, 05), winner: "Tyler"})
-#match3.players = [tyler, fei, piper]
+#match3 = Match.create({game_id: 3, match_datetime: DateTime.new(1984, 8, 19, 10, 47, 05), winner: "Tyler"})
+#match3.player_names = [tyler, fei, piper]
 #match3.winner = tyler
-#match3.save
+match3.save

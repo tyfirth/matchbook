@@ -6,19 +6,23 @@ class MatchesController < ApplicationController
 
   def new
     @match = Match.new
-    @game = Game.new
     @player = Player.new
   end
 
   def create
     @match = Match.new(match_params)
-    @match.save
-
-    redirect_to match_path(@match)
+    @match.winner = Player.find_by(params[:player_id]).name
+    byebug
+    if @match.save
+      redirect_to match_path(@match)
+    else
+      @errors = @match.errors.full_messages
+      render :new
+    end
   end
 
   def show
-    @match = Match.find(params[:id])
+    @match = Match.find_by(id: params[:id])
     @match_game = Game.find_by(id: @match.game_id)
     #do I need players or match_players here?
   end
@@ -45,7 +49,7 @@ class MatchesController < ApplicationController
   private
 
   def match_params
-    params.require(:match).permit(:players, :title, :match_datetime, :winner, :score, :notes, :game_id)
+    params.require(:match).permit(:match_datetime, :winner, :score, :notes, :game_id, :player_id, player_names: [])
   end
 
   #getting error unpermitted parameter "players" on new match form...

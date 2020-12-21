@@ -1,3 +1,5 @@
 <h1>Edit Game</h1>
 
 <%= render partial: 'form', locals: {game: @game} %>
+
+<%= button_to "Delete Game", game_path(@game), method: :delete %>

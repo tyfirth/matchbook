@@ -9,10 +9,10 @@ class PlayersController < ApplicationController
   end
 
   def create
-    @player = Player.new(player_params)
-    @player.save
+    player = Player.new(player_params)
+    player.save
 
-    redirect_to @player
+    redirect_to player_path(player)
   end
 
   def show
@@ -20,21 +20,26 @@ class PlayersController < ApplicationController
   end
 
   def edit
-    @player = Player.find(params[:id])
+    @player = Player.find_by(id: params[:id])
   end
 
   def update
+    player = Player.find_by(id: params[:id])
+    player.update(player_params)
 
+    redirect_to player_path(player)
   end
 
   def destroy
+    Player.find(params[:id]).destroy
 
+    redirect_to players_path
   end
 
   private
 
   def player_params
-    params.require(:player).permit(:name, :age, :motto, :favorite_game, :win_phrase, :lose_phrase)
+    params.require(:player).permit(:name, :username, :age, :motto)
   end
 
 end

@@ -6,12 +6,10 @@ class MatchesController < ApplicationController
 
   def new
     @match = Match.new
-    #binding.pry
-    #@match.players.build
   end
 
   def create
-    binding.pry
+    #binding.pry
 
     @match = Match.new(match_params)
 
@@ -44,10 +42,9 @@ class MatchesController < ApplicationController
   end
 
   def destroy
-    @match = Match.find_by(id: params[:id])
+  Match.find_by(id: params[:id]).destroy
 
     redirect_to matches_path
-
   end
 
   private

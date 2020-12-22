@@ -12,7 +12,7 @@
   <%=f.collection_select :game_id, Game.all, :id, :name %>
 <br><br>
 
-  <%=f.label :player_ids %>
+  <%=f.label "Players" %>
   <%=f.collection_check_boxes :player_ids, Player.all, :id, :name %>
 <br><br>
 <!--is this where hidden forms come in?-->

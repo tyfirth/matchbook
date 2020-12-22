@@ -24,7 +24,10 @@ class PlayersController < ApplicationController
   end
 
   def update
+    player = Player.find_by(id: params[:id])
+    player.update(player_params)
 
+    redirect_to player_path(player)
   end
 
   def destroy

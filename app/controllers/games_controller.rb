@@ -28,14 +28,16 @@ class GamesController < ApplicationController
   end
 
   def update
-    game = game.find_by(id: params[:id])
+    game = Game.find_by(id: params[:id])
     game.update(game_params)
 
     redirect_to game_path(game)
   end
 
   def destroy
+    Game.find_by(id: params[:id]).destroy
 
+    redirect_to games_path
   end
 
   private

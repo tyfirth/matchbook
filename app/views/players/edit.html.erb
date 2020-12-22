@@ -2,4 +2,6 @@
 
 <%= render partial: 'form', locals: {player: @player} %>
 
+<%= button_to "Delete Player", player_path(@player), method: :delete %>
+
 <br><br>

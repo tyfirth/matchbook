@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :players
-  
-  resources :matches
+  resources :players do
+    resources :matches, only: [:show, :index]
+  end
+
+  resources :matches do
+    resources :players, only: [:show, :index]
+  end
 
   resources :games do
-    resources :matches, only: [:new, :create, :show, :index]
+    resources :matches, only: [:show, :index]
   end
 
 

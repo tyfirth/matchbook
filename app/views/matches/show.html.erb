@@ -7,16 +7,17 @@
 
 <br>
 
-<h2>Winner: <%= link_to @match.winner, player_path(@match_winner) %> </h2>
+<h2>Winner: <%= link_to @match.winner, player_path(@match_winner) %> </h2><br>
 
-<h3>Score: <%= @match.score %> </h3>
+<h3>Score: <%= @match.score %> </h3><br>
 
-<h3>Players: <% @match.players.each do |player| %></h3>
+<h3>Players: </h3>
 <ul>
-  <li> <%= link_to player.name, player_path(player) %></li>
+  <% @match.players.each do |player| %>
+    <li> <%= link_to player.name, match_player_path(@match, player) %></li>
+  <% end %>
 </ul>
 
-<% end %>
 <br><br>
 
 <%= link_to "Edit Match Details", edit_match_path(@match) %>

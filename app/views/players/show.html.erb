@@ -13,5 +13,14 @@
 </ul>
 
 <br><br>
+<h1><%= "#{@player.name}"%>'s Matches</h1>
+<ul>
+  <% @player.matches.each do |match| %>
+    <li><%= link_to match.title, player_match_path(@player, match) %></li>
+  <% end %>
+</ul>
+
+
+<br><br>
 <%= link_to "Edit Player", edit_player_path(@player) %>
 <br><br>

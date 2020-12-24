@@ -19,6 +19,8 @@
 </ul>
 
 <br><br>
-
+<% if logged_in? && current_user %>
 <%= link_to "Edit Match Details", edit_match_path(@match) %>
+<% end %>
+
 <br><br>

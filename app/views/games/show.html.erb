@@ -18,5 +18,8 @@
 
 <% end %>
 <br><br>
+<% if logged_in? && current_user %>
 <%= link_to "Edit Game", edit_game_path(@game) %>
+<% end %>
+
 <br><br>

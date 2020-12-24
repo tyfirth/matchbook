@@ -6,6 +6,7 @@ class MatchesController < ApplicationController
 
   def new
     @match = Match.new
+    @match.players.build
   end
 
   def create
@@ -50,7 +51,7 @@ class MatchesController < ApplicationController
   private
 
   def match_params
-    params.require(:match).permit({players_attributes: [:name, :id]}, :title, :match_datetime, :winner, :score, :notes, :game_id, {player_ids: []})
+    params.require(:match).permit({players_attributes: [:name, :id, :age, :motto, :win_phrase, :lose_phrase, :favorite_game]}, :title, :match_datetime, :winner, :score, :notes, :game_id, {player_ids: []})
   end
 
   #getting error unpermitted parameter "players" on new match form...

@@ -10,9 +10,12 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.new(player_params)
-    @player.save
-
-    redirect_to @player
+      if @player.save
+        redirect_to @player
+      else
+        @errors = @player.errors.full_messages
+        render :new
+      end
   end
 
   def show

@@ -1,3 +1,5 @@
+<%= link_to "Home", "/" %>
+<br>
 <%= link_to "All the Games", games_path %>
 <br>
 <%= link_to "Create New Game", new_game_path(@game) %>
@@ -11,4 +13,6 @@
 <%= link_to "All the Matches", matches_path %>
 <br>
 <%= link_to "Create New Match", new_match_path(@game) %>
+<br>
+<%= link_to "Logout", logout_path, method: :post %>
 <br>

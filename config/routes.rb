@@ -14,7 +14,19 @@ Rails.application.routes.draw do
   end
 
   #devise_for :users, controllers: { registrations: 'registrations', omniauth_callbacks: 'users/omniauth_callbacks' }
-  devise_for :users, controllers: { registrations: 'registrations' }
+  #devise_for :users, controllers: { registrations: 'registrations' }
+
+  resources :users
+
+  root to: 'users#home'
+
+
+  get '/signup', to: 'users#new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  post '/logout', to: 'sessions#destroy'
+
+
 
 
 end

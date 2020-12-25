@@ -1,5 +1,8 @@
 class PlayersController < ApplicationController
 
+  def home
+  end
+
   def index
     @players = Player.all
   end
@@ -8,8 +11,11 @@ class PlayersController < ApplicationController
     @player = Player.new
   end
 
+
   def create
+    binding.pry
     @player = Player.new(player_params)
+    @player.user_id = session[:user_id]
       if @player.save
         redirect_to @player
       else
@@ -43,7 +49,7 @@ class PlayersController < ApplicationController
   private
 
   def player_params
-    params.require(:player).permit(:name, :age, :motto, :favorite_game, :win_phrase, :lose_phrase, :user_id)
+    params.require(:player).permit(:name, :age, :motto, :favorite_game, :win_phrase, :lose_phrase, :user_id, :password)
   end
 
 end

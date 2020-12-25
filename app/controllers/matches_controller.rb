@@ -6,11 +6,11 @@ class MatchesController < ApplicationController
 
   def new
     @match = Match.new
-    #@match.players.build
+    @match.players.build
   end
 
   def create
-    #binding.pry
+    binding.pry
 
     @match = Match.new(match_params)
 

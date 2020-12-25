@@ -4,7 +4,11 @@ class Player < ApplicationRecord
 
   belongs_to :user
 
+  has_secure_password
+
   validates :name, presence: true
+  validates_uniqueness_of :name
+  #validates :password, presence: true
 
   def wins
     #returns count of number of matches with wins

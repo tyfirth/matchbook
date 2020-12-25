@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :users do
+    resources :players, only: [:show, :index, :new, :create]
+  end
+
   resources :players do
     resources :matches, only: [:show, :index]
   end
@@ -16,7 +21,9 @@ Rails.application.routes.draw do
   #devise_for :users, controllers: { registrations: 'registrations', omniauth_callbacks: 'users/omniauth_callbacks' }
   #devise_for :users, controllers: { registrations: 'registrations' }
 
-  resources :users
+
+
+  ######### this might have been what was missing ^^^^^^^^^^^^###############
 
   root to: 'users#home'
 

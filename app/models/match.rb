@@ -6,6 +6,6 @@ class Match < ApplicationRecord
 
   accepts_nested_attributes_for :players
 
-  scope :ordered_recent_first, -> { order(match_datetime: :desc )}
+  #scope :ordered_recent_first, -> { order(match_datetime: :desc )}
 
 end

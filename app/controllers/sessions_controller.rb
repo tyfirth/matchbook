@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     render 'users/sessions/new'
+    #render 'players/sessions/new'
   end
 
   def create
@@ -15,9 +16,21 @@ class SessionsController < ApplicationController
       end
   end
 
+  # def create
+  #   #binding.pry
+  #   @player = Player.find_by(name: params[:player][:name])
+  #     if @player && @player.authenticate(params[:player][:name])
+  #       session[:player_id] = @player.id
+  #       redirect_to players_path
+  #     else
+  #       @errors = @user.errors.full_messages
+  #       render 'players/sessions/new'
+  #     end
+  # end
+
   def destroy
     session.clear
-    
+
     redirect_to '/'
   end
 

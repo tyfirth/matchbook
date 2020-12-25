@@ -15,8 +15,28 @@
   <%=f.label "Players" %>
   <%=f.collection_check_boxes :player_ids, Player.all, :id, :name %>
 <br><br>
-<!--is this where hidden forms come in?-->
-
+<p>Create a new player here:</p>
+  <%= f.fields_for :players do |m| %>
+    <%= m.label :name %><br>
+    <%= m.text_field :name %>
+    <br>
+      <%= m.label :age %><br>
+      <%= m.text_field :age %>
+    <br>
+      <%= m.label :motto %><br>
+      <%= m.text_field :motto %>
+    <br>
+      <%= m.label :favorite_game %><br>
+      <%= m.text_field :favorite_game %>
+    <br>
+      <%= m.label :win_phrase %><br>
+      <%= m.text_field :win_phrase %>
+    <br>
+      <%= m.label :lose_phrase %><br>
+      <%= m.text_field :lose_phrase %>
+    <br>
+  <% end %>
+<br><br>
   <%=f.label :score %>
   <%=f.text_field :score %>
 <br><br>

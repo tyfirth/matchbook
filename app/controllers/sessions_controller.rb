@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:user][:username])
       if @user && @user.authenticate(params[:user][:password])
         session[:user_id] = @user.id
-        redirect_to 'users/home'
+        redirect_to players_path
       else
         @errors = @user.errors.full_messages
         render 'users/sessions/new'
@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear
+    
     redirect_to '/'
   end
 

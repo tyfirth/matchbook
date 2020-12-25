@@ -5,7 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+User.destroy_all
+User.reset_pk_sequence
 Player.destroy_all
 Player.reset_pk_sequence
 Game.destroy_all
@@ -13,14 +14,30 @@ Game.reset_pk_sequence
 Match.destroy_all
 Match.reset_pk_sequence
 
-tyler = Player.create({name: "Tyler", age: 36, motto: "yolo", favorite_game: "Hold'em", win_phrase: "IYAMA GULDEN GAWD!", lose_phrase: "Shucks"})
+user1 = User.create({username: "Tyler", password: "123"})
 
-fei = Player.create({name: "Fei", age: 29, motto: "brows on fleek", favorite_game: "Azul", win_phrase: "Of course", lose_phrase: "fake news"})
+user2 = User.create({username: "Fei", password: "123"})
 
-marla = Player.create({name: "Marla", age: 5, motto: "stop and smell the roses", favorite_game: "ball", win_phrase: "Woof", lose_phrase: "growl"})
+user3 = User.create({username: "Marla", password: "123"})
 
-piper = Player.create({name: "Piper", age: 2, motto: "i demand cuddles", favorite_game: "tugz", win_phrase: "your soul is mine", lose_phrase: "no biggie"})
+user4 = User.create({username: "Piper", password: "123"})
 
+user5 = User.create({username: "Mom", password: "123"})
+
+user6 = User.create({username: "Dad", password: "123"})
+
+
+tyler = Player.create({name: "Tyler", age: 36, motto: "yolo", favorite_game: "Hold'em", win_phrase: "IYAMA GULDEN GAWD!", lose_phrase: "Shucks", user_id: 1})
+
+fei = Player.create({name: "Fei", age: 29, motto: "brows on fleek", favorite_game: "Azul", win_phrase: "Of course", lose_phrase: "fake news", user_id: 2})
+
+marla = Player.create({name: "Marla", age: 5, motto: "stop and smell the roses", favorite_game: "ball", win_phrase: "Woof", lose_phrase: "growl", user_id: 3})
+
+piper = Player.create({name: "Piper", age: 2, motto: "i demand cuddles", favorite_game: "tugz", win_phrase: "your soul is mine", lose_phrase: "no biggie", user_id: 4})
+
+mom = Player.create({name: "Mom", age: 26, motto: "rOYAL!", favorite_game: "Cribbage", win_phrase: "I was losing the whole time!", lose_phrase: "next time", user_id: 5})
+
+dad = Player.create({name: "Dad", age: 60, motto: "yeehaw", favorite_game: "Cod", win_phrase: "Say your prayers!", lose_phrase: "unbuluvuble", user_id: 4})
 
 
 catan = Game.create({name: "Catan", description: "Risk meets Monopoly", category: "Board game"})

@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_12_24_025253) do
     t.string "win_phrase"
     t.string "lose_phrase"
     t.string "password_digest"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

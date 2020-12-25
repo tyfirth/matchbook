@@ -6,7 +6,7 @@ class MatchesController < ApplicationController
 
   def new
     @match = Match.new
-    @match.players.build
+    #@match.players.build
   end
 
   def create

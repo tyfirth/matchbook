@@ -15,6 +15,10 @@
   <%=f.label "Players" %>
   <%=f.collection_check_boxes :player_ids, Player.all, :id, :name %>
 <br><br>
+<<<<<<< HEAD
+=======
+<!-- New player nested form -->
+>>>>>>> 50f45f94541cebeb5157259d8c7f8600f12c9a24
 <p>Create a new player here:</p>
   <%= f.fields_for :players do |m| %>
     <%= m.label :name %><br>

@@ -1,0 +1,35 @@
+<h1>Sign Up</h1>
+
+<%= form_for @user do |f| %>
+
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br><br>
+
+  <%=f.label :password %>
+  <%= f.password_field :password %><br><br>
+  <h3>Create New Player</h3>
+    <%= f.fields_for :player do |p| %>
+
+    <%= p.label :name %>
+    <%= p.text_field :name %>
+  <br><br>
+    <%= p.label :age %>
+    <%= p.text_field :age %>
+  <br><br>
+    <%= p.label :motto %>
+    <%= p.text_field :motto %>
+  <br><br>
+    <%= p.label :favorite_game %>
+    <%= p.text_field :favorite_game %>
+  <br><br>
+    <%= p.label :win_phrase %>
+    <%= p.text_field :win_phrase %>
+  <br><br>
+    <%= p.label :lose_phrase %>
+    <%= p.text_field :lose_phrase %>
+<br><br>
+    <% end %>
+  <%= f.submit %>
+<% end %>
+<br><br>

@@ -9,6 +9,8 @@ class CreatePlayers < ActiveRecord::Migration[6.0]
       t.string :lose_phrase
       t.string :password_digest
 
+      t.integer :user_id
+
       t.timestamps
     end
   end

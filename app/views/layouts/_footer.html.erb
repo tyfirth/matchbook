@@ -1,3 +1,8 @@
+
+
+
+<%= button_to "Home", "/", method: :get %>
+<br><br>
 <%= link_to "All the Games", games_path %>
 <br>
 <%= link_to "Create New Game", new_game_path(@game) %>
@@ -12,3 +17,15 @@
 <br>
 <%= link_to "Create New Match", new_match_path(@game) %>
 <br>
+<br><br>
+<%= button_to "Logout", logout_path, method: :destroy %>
+<br>
+
+<%= link_to "Sign Up", signup_path %>
+<br><br>
+
+<%= link_to "Login", login_path %>
+<br><br>
+
+<%= link_to "Sign in with Facebook", '/auth/facebook' %>
+<br><br>

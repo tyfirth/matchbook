@@ -3,6 +3,9 @@ class Player < ApplicationRecord
   has_many :games, through: :matches
 
   validates :name, uniqueness: true
+  validates :name, presence: true
+
+  has_secure_password
 
   def self.wins
     #returns count of number of matches with wins

@@ -1,5 +1,9 @@
 class PlayersController < ApplicationController
 
+  def home
+
+  end
+
   def index
     @players = Player.all
   end
@@ -31,13 +35,14 @@ class PlayersController < ApplicationController
   end
 
   def destroy
-
+    Player.find_by(id: params[:id]).destroy
+    redirect_to root_path
   end
 
   private
 
   def player_params
-    params.require(:player).permit(:name, :age, :motto, :favorite_game, :win_phrase, :lose_phrase)
+    params.require(:player).permit(:name, :age, :motto, :favorite_game, :win_phrase, :lose_phrase, :password)
   end
 
 end

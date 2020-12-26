@@ -13,13 +13,13 @@ Game.reset_pk_sequence
 Match.destroy_all
 Match.reset_pk_sequence
 
-tyler = Player.create({name: "Tyler", age: 36, motto: "yolo", favorite_game: "Hold'em", win_phrase: "IYAMA GULDEN GAWD!", lose_phrase: "Shucks"})
+tyler = Player.create({name: "Tyler", age: 36, motto: "yolo", favorite_game: "Hold'em", win_phrase: "IYAMA GULDEN GAWD!", lose_phrase: "Shucks", password: "123"})
 
-fei = Player.create({name: "Fei", age: 29, motto: "brows on fleek", favorite_game: "Azul", win_phrase: "Of course", lose_phrase: "fake news"})
+fei = Player.create({name: "Fei", age: 29, motto: "brows on fleek", favorite_game: "Azul", win_phrase: "Of course", lose_phrase: "fake news", password: "123"})
 
-marla = Player.create({name: "Marla", age: 5, motto: "stop and smell the roses", favorite_game: "ball", win_phrase: "Woof", lose_phrase: "growl"})
+marla = Player.create({name: "Marla", age: 5, motto: "stop and smell the roses", favorite_game: "ball", win_phrase: "Woof", lose_phrase: "growl", password: "123"})
 
-piper = Player.create({name: "Piper", age: 2, motto: "i demand cuddles", favorite_game: "tugz", win_phrase: "your soul is mine", lose_phrase: "no biggie"})
+piper = Player.create({name: "Piper", age: 2, motto: "i demand cuddles", favorite_game: "tugz", win_phrase: "your soul is mine", lose_phrase: "no biggie", password: "123"})
 
 
 

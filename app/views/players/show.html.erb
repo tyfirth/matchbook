@@ -22,5 +22,7 @@
 
 
 <br><br>
+<% if logged_in? && current_user.id == @player.id %>
 <%= link_to "Edit Player", edit_player_path(@player) %>
+<% end %>
 <br><br>

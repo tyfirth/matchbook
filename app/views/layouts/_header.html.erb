@@ -1,3 +1,9 @@
 <% @errors && @errors.each do |e| %>
   <%= e %>
   <% end %>
+
+  <% if logged_in? %>
+  <h3>You're logged in as <%= current_user.name %> </h3>
+  <% else %>
+  <h3>You're currently logged out.</h3>
+<% end %>

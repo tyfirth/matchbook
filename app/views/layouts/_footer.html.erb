@@ -3,6 +3,9 @@
 
 <%= button_to "Home", "/", method: :get %>
 <br><br>
+
+<% if logged_in? %>
+
 <%= link_to "All the Games", games_path %>
 <br>
 <%= link_to "Create New Game", new_game_path(@game) %>
@@ -21,6 +24,8 @@
 <%= button_to "Logout", logout_path, method: :destroy %>
 <br>
 
+<% else %>
+
 <%= link_to "Sign Up", signup_path %>
 <br><br>
 
@@ -29,3 +34,5 @@
 
 <%= link_to "Sign in with Facebook", '/auth/facebook' %>
 <br><br>
+
+<% end %>

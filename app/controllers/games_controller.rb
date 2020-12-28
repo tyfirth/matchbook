@@ -10,6 +10,7 @@ class GamesController < ApplicationController
   end
 
   def create
+    #binding.pry
     @game = Game.new(game_params)
     if @game.save
       redirect_to game_path(@game)
@@ -43,7 +44,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:name, :category, :description)
+    params.require(:game).permit(:name, :category, :description, matches_attributes: [:title, :match_datetime, :players, :score, :winner, :notes, :id, {player_ids: []}])
   end
 
 end

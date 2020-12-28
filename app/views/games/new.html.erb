@@ -1,5 +1,40 @@
 <h1>New Game</h1>
 
-<%= render partial: 'form', locals: {game: @game} %>
+<%= form_for @game do |f| %>
+
+  <%= f.label :name%>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :category %>
+  <%= f.text_field :category %><br>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %><br>
+<br>
+  <%= f.fields_for :matches do |m| %>
+
+  <%=m.label :title %>
+  <%=m.text_field :title %>
+<br>
+  <%=m.label :match_datetime %>
+  <%=m.datetime_select :match_datetime %>
+<br><br>
+
+  <%=m.label "Players" %>
+  <%=m.collection_check_boxes :player_ids, Player.all, :id, :name %>
+<br><br>
+  <%=m.label :score %>
+  <%=m.text_field :score %>
+<br><br>
+  <%=m.label :winner %>
+  <%=m.collection_radio_buttons :winner, Player.all, :name, :name %>
+<br><br>
+  <%= m.label :notes %>
+  <%= m.text_area :notes %>
+<br><br>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
 
 <br><br>

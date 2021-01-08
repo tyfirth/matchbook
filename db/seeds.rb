@@ -33,14 +33,14 @@ life = Game.create({name: "Life", description: "The game of Life", category: "Bo
 #
 #
 #
-# match1 = Match.create({game_id: 1, match_datetime: DateTime.new(2017, 07, 12, 19, 00, 0), score: 17, notes: "a decicive victory", winner: "Fei"})
-# match1.players = [tyler, fei, marla, piper]
-# match1.save
-#
+#  match1 = Match.create({game_id: 1, match_datetime: DateTime.new(2017, 07, 12, 19, 00, 0), score: 17, notes: "a decicive victory", winner: "Fei"})
+#  match1.players = [tyler, fei, marla, piper]
+#  match1.save
+# #
 # match2 = Match.create({game_id: 2, match_datetime: DateTime.new(2020, 04, 01, 15, 55, 0), score: 96, notes: "won by a nose", winner: "Marla"})
 # match2.players = [marla, piper]
 # match2.save
-#
+# #
 # match3 = Match.create({game_id: 3, match_datetime: DateTime.new(1984, 8, 19, 10, 46, 55), score: 1000000, notes: "a royal win", winner: "Tyler"})
 # match3.players = [tyler, fei, piper]
 # match3.save

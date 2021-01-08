@@ -1,9 +1,8 @@
 <h1>All da playas</h1>
 
-<% @players.each do |player| %>
+<% @players.order_by_name.each do |player| %>
 
-<%= link_to player.name, player_path(player) %>
-<br>
+<h3><%= link_to player.name, player_path(player) %></h3>
 
 <% end %>
 <br><br>

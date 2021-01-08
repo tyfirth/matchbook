@@ -7,13 +7,17 @@ class Player < ApplicationRecord
 
   has_secure_password
 
-  def self.wins
-    #returns count of number of matches with wins
-    #self.matches.where(winner: self)
+  scope :order_by_name, -> { order(name: :asc)}
+
+  def wins
+    Match.where(winner: self.name).count
   end
 
-  def self.losses
-    #returns count of all matches that are not wins (self.matches.count - self.wins)
+  def losses
+    wins = Match.where(winner: self.name).count
+    total_matches = self.matches.count
+    losses = total_matches - wins
+    losses
   end
 
 end

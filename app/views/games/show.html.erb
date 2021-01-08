@@ -9,7 +9,7 @@
 
 <% @game.matches.each do |match| %>
 
-  <%= link_to match.match_datetime, game_match_path(@game, match)%>
+  <%= link_to match.title, game_match_path(@game, match)%>
     <ul>
       <% match.players.each do |player| %>
       <li><%= link_to player.name, player_path(player) %></li>

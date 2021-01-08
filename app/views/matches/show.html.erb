@@ -3,7 +3,7 @@
 <h1> <%= link_to @match_game.name, game_path(@match_game) %> </h1>
 
 <h1> <%= @match.title %> </h1>
-<h3>Played On <%= @match.created_at %> </h3>
+<h3>Played On <%= @match.created_at.strftime(' %A,  %B %e %Y') %> </h3>
 
 <br>
 

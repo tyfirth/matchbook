@@ -1,27 +1,3 @@
 <h1>Create New Player</h1>
 
-<%= form_for @player do |f| %>
-
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-<br>
-  <%= f.label :age %>
-  <%= f.text_field :age %>
-<br>
-  <%= f.label :motto %>
-  <%= f.text_field :motto %>
-<br>
-  <%= f.label :favorite_game %>
-  <%= f.text_field :favorite_game %>
-<br>
-  <%= f.label :win_phrase %>
-  <%= f.text_field :win_phrase %>
-<br>
-  <%= f.label :lose_phrase %>
-  <%= f.text_field :lose_phrase %>
-<br>
-  <%= f.submit %>
-<% end %>
+<%= render partial: 'form', locals: {player: @player} %>

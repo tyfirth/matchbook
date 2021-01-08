@@ -16,7 +16,7 @@ class PlayersController < ApplicationController
     @player = Player.new(player_params)
     @player.save
 
-    redirect_to @player
+    redirect_to player_path(@player)
   end
 
   def show

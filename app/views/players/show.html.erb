@@ -19,6 +19,11 @@
     <li><%= link_to match.title, player_match_path(@player, match) %></li>
   <% end %>
 </ul>
+<br>
+
+<h3>Total Wins: <%= @player.wins %> </h3>
+
+<h3>Total Losses: <%= @player.losses %></h3><br>
 
 
 <br><br>

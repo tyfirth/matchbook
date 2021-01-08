@@ -1,30 +1,4 @@
 <h1>Create New Match</h1>
 
-<%= form_for @match do |f| %>
-
-  <%=f.label :title %>
-  <%=f.text_field :title %>
-<br>
-  <%=f.label :match_datetime %>
-  <%=f.datetime_select :match_datetime %>
-<br><br>
-  <%=f.label :game_id %>
-  <%=f.collection_select :game_id, Game.all, :id, :name %>
-<br><br>
-
-  <%=f.label "Players" %>
-  <%=f.collection_check_boxes :player_ids, Player.all, :id, :name %>
-<br><br>
-  <%=f.label :score %>
-  <%=f.text_field :score %>
-<br><br>
-  <%=f.label :winner %>
-  <%=f.collection_radio_buttons :winner, Player.all, :name, :name %>
-<br><br>
-  <%= f.label :notes %>
-  <%=f.text_area :notes %>
-<br><br>
-
-  <%=f.submit %>
-<% end %>
+<%= render partial: 'form', locals: {match: @match} %>
 <br><br>

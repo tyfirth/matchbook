@@ -1,5 +1,37 @@
 # README
 
+#Welcome to Matchbook, a score keeping application for family game nights. Record matches of your favorite games to keep track of who won what game and when!#
+
+#To start Matchbook
+
+ Open the matchbook directory in your terminal:
+
+'$ /mnt/c/users/tyfir/dev/flatiron/projects/matchbook_main/matchbook'
+
+Open a browser and navigate to: "http://localhost:3000"
+
+##Using Matchbook##
+
+Create a new player by clicking "Sign Up" on the home page.
+
+You can also create a new player by signing up with Facebook **Signing up with Facebook sets the default password to "123"
+
+Once you have a player account created, you can sign in to view all the players, matches, or games.
+
+You can click into your player account to edit profile details or delete your player account.
+
+You can create a new game and a match in one go, add the players to that match, and select when that match was played.
+
+**You must include a score for the game and select a winner.**
+
+
+
+Still to do:
+
+Record walkthrough, update github
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
@@ -20,35 +52,3 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
-# matchbook
-
-
-
-  I want this application to be fun and easy to use. This application will keep track of matches of games between players, like a record book for family game nights.
-
-  I want a user to be able to create a players, games, and matches.
-
-  A player has many matches, and has many games through matches.
-  A game has many matches, and has many players through matches.
-
-  A match belongs to a game.
-  A match has and belongs to many players.
-
-  Sample commands/methods
-
-  'game.matches' returns all the matches of a game. Ex. 'Catan.matches' returns an array of all catan matches in reverse chronological order, most recent first
-
-  'player.matches' retuns all the matches a player played in reverse chronological order, most recent first
-
-Questions
-
-- Match show page objects of users being puts
-
--Players array in match
-
--How to handle the winner
-
--What's best to use, datetime or strftime
--can you format datetime?

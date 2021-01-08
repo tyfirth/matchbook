@@ -3,7 +3,7 @@
 <ol>
   <% @matches.each do |match| %>
 
-    <li><%=link_to match.match_datetime, match_path(match) %><br></li>
+    <h3><li><%=link_to match.title, match_path(match) %><br></li></h3>
 
   <% end %>
 
